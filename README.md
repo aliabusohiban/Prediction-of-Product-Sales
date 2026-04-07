@@ -44,14 +44,15 @@ The notebook includes:
 ## Exploratory Data Analysis
 
 ### 1) Item MRP Distribution
-`Item_MRP` is one of the most important numeric variables in the dataset. Its distribution helps show how product price points are spread across the data.
+`Item_MRP` is not randomly spread. The histogram shows a multi-modal pattern with four clear price bands, which suggests the products are grouped into distinct pricing segments rather than following one smooth continuous distribution. The mean and median are close, but that does not mean the feature is “normal”; the visible clusters show the data likely contains several underlying product classes. This matters because `Item_MRP` may behave more like a structured commercial pricing variable than a simple numeric field.
 
-![Item MRP Distribution](images/item_mrp_distribution.png)
+<img width="989" height="690" alt="EDA_Item_MRP" src="https://github.com/user-attachments/assets/2e74a8fd-f84a-47d3-9431-37c6da90d793" />
+
 
 ### 2) Correlation Heatmap
-The heatmap shows the relationship between numerical variables and the target. This helps identify the strongest predictors and whether any variables move together.
+The correlation heatmap shows that most numeric features have little to no linear relationship with `Item_Outlet_Sales`. The only feature with a meaningful correlation is `Item_MRP` at 0.57, which indicates a moderate positive relationship with sales. `Item_Weight`, `Item_Visibility`, and `Outlet_Establishment_Year` are all near zero, so they do not appear to explain sales well on a linear basis. This tells us that the target is likely driven more by `Item_MRP` than by the other numeric variables, and that some important relationships may be nonlinear or hidden in categorical features.
 
-![Correlation Heatmap](images/correlation_heatmap.png)
+<img width="659" height="590" alt="HeatMap" src="https://github.com/user-attachments/assets/6556c6fb-fb94-4592-a055-b4e1df53f46d" />
 
 ## Modeling
 A regression model was trained to predict `Item_Outlet_Sales` using the processed feature set.
