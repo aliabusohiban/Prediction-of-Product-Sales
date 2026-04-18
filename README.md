@@ -76,14 +76,6 @@ The model was assessed using standard regression metrics such as:
 - The correlation heatmap is helpful for spotting relationships between numeric features and the target.
 - A clear preprocessing pipeline improves model consistency and makes the analysis easier to reproduce.
 
-## Conclusion
-This project shows how product and outlet features can be used to predict sales with a regression model. The EDA suggests that price-related variables are especially important, and the final model provides a structured way to estimate sales from the available features.
-
-## Repository Files
-- `Prediction_of_Product_Sales.ipynb` — full analysis notebook
-- `README.md` — project summary
----
-
 ## 🤖 CRISP-DM Phase 4 — Modeling Results
 
 ### Model Comparison Summary
